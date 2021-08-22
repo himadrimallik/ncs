@@ -3,7 +3,7 @@
 
 <suite name="Selenium Cucumber TestNG Suite">
 
-    <test name="Chrome Test" enabled="false">
+    <test name="Chrome Test" enabled="true">
         <parameter name ="browser" value="Chrome" />
         <parameter name ="features" value="src/test/resources/features" />
         <parameter name ="tags" value="@Oppenheimer_UI" />
@@ -30,7 +30,7 @@
         </classes>
     </test>
 
-    <test name="API Test" enabled="true">
+    <test name="API Test" enabled="false">
         <parameter name ="features" value="src/test/resources/features" />
         <parameter name ="tags" value="@Oppenheimer_API" />
         <classes>

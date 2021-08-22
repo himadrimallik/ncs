@@ -19,23 +19,20 @@ public class CommonStepDefs extends BaseTest {
     }
 
     @Given("I launch Oppenheimer application")
-    public void i_launch_application_in_browser() throws IOException {
+    public void iLaunchOppenheimerApplication() throws IOException {
         driver.get(Hooks.prop.getProperty("oppenheimerUIApplication"));
     }
 
     @Then("I should navigate to Landing page")
-    public void i_should_navigate_to_landing_page() {
+    public void iShouldNavigateToLandingPage() {
         commonPage.verifyLandingPage();
     }
 
-    @Then("I close Application")
-    public void i_close_application() {
-
+    @Given("I have CSV file")
+    public void iHaveCSVFile() {
     }
 
-    @When("I click on {string} from Landing Page")
-    public void i_click_on_from_landing_page(String string) {
-        commonPage.navigateToInsurance(string);
+    @Given("I launch application via API")
+    public void iLaunchApplicationViaAPI() {
     }
-
 }

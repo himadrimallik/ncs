@@ -26,13 +26,11 @@ public class UIRunner extends BaseTest {
 
        private TestNGCucumberRunner testNGCucumberRunner;
 
-//    public static RemoteWebDriver connection;
-
         @Parameters({"features", "browser","tags"})
         @BeforeClass(alwaysRun = true)
         public void setUpCucumber(String features,String browser,String tags) throws NoSuchFieldException, IllegalAccessException {
 
-            browserName = browser; //prop.getProperty("browser");
+            browserName = browser;
 
             if(browserName.equalsIgnoreCase("Chrome")){
                 System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");

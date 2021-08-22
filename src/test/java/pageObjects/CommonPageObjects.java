@@ -7,14 +7,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class CommonPageObjects {
 
-    @FindAll({@FindBy(id = "tricentis_logo"), @FindBy(id = "search")})
-    public WebElement landingPageLogo;
-
-    @FindAll({@FindBy(id = "app_sub_title"), @FindBy(className = "subtitle")})
+    @FindAll({@FindBy(xpath = "//*[text() = 'The Oppenheimer Project']")})
     public WebElement landingPageHeader;
 
-    @FindAll({@FindBy(id = "nav_automobile")})
-    public WebElement automobileLink;
+    @FindAll({@FindBy(className = "custom-file-input")})
+    public WebElement browseCSV;
 
 
 

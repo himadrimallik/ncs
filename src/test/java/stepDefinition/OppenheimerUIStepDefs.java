@@ -9,26 +9,38 @@ import java.io.IOException;
 
 public class OppenheimerUIStepDefs extends BaseTest {
 
-    OppenheimerUIPage insurantDataPage;
+    OppenheimerUIPage oppenheimerUIPage;
 
     public OppenheimerUIStepDefs() throws IOException {
-        insurantDataPage = new OppenheimerUIPage(driver);
+        oppenheimerUIPage = new OppenheimerUIPage(driver);
     }
 
-    @Then("I should navigate to Insurant Data page for {string} insurance")
-    public void i_should_navigate_to_insurant_data_page_for_insurance(String string) {
-        if (string.equalsIgnoreCase("Automobile")){
-            insurantDataPage.verifyAutomobileInsurantPage();
-        }
+    @When("I upload csv file")
+    public void iUploadCsvFile() {
     }
 
-    @When("I submit Insurant data with {string} details for {string} insurance")
-    public void i_submit_insurant_data_with_details_for_insurance(String string, String string2) {
-        if (string2.equalsIgnoreCase("Automobile")){
-            if (string.equalsIgnoreCase("valid")){
-                insurantDataPage.enterValidAutomobileInsurantData();
-            }
-        }
+    @When("I should navigate to Dispense Tax Relief page")
+    public void iShouldNavigateToDispenseTaxReliefPage() {
     }
 
+    @Then("I should see red colored button")
+    public void iShouldSeeRedColoredButton() {
+    }
+
+    @Then("I should see {string} button")
+    public void iShouldSeeButton(String arg0) {
+    }
+
+    @When("I click on {string} button")
+    public void iClickOnButton(String arg0) {
+    }
+
+    @Then("I should navigate to Cash Dispensed page")
+    public void iShouldNavigateToCashDispensedPage() {
+
+    }
+
+    @Then("I should see records")
+    public void iShouldSeeRecords() {
+    }
 }
