@@ -22,7 +22,7 @@ import java.util.Map;
         glue = "stepDefinition"
         )
 
-public class TestRunner extends BaseTest {
+public class APIRunner extends BaseTest {
 
        private TestNGCucumberRunner testNGCucumberRunner;
 
@@ -68,7 +68,7 @@ public class TestRunner extends BaseTest {
             testNGCucumberRunner.finish();
         }
 
-        private static void changeCucumberAnnotation(Class<?> clazz, java.lang.String key, Object value) throws IllegalAccessException, NoSuchFieldException {
+        private static void changeCucumberAnnotation(Class<?> clazz, String key, Object value) throws IllegalAccessException, NoSuchFieldException {
             Annotation options = clazz.getAnnotation(CucumberOptions.class);
             InvocationHandler proxyHandler = Proxy.getInvocationHandler(options);
             Field f = proxyHandler.getClass().getDeclaredField("memberValues");

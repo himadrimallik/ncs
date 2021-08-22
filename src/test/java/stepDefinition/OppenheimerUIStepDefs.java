@@ -3,16 +3,16 @@ package stepDefinition;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import libraries.BaseTest;
-import pages.InsurantDataPage;
+import pages.OppenheimerUIPage;
 
 import java.io.IOException;
 
-public class InsurantDataStepDefs extends BaseTest {
+public class OppenheimerUIStepDefs extends BaseTest {
 
-    InsurantDataPage insurantDataPage;
+    OppenheimerUIPage insurantDataPage;
 
-    public InsurantDataStepDefs() throws IOException {
-        insurantDataPage = new InsurantDataPage(driver);
+    public OppenheimerUIStepDefs() throws IOException {
+        insurantDataPage = new OppenheimerUIPage(driver);
     }
 
     @Then("I should navigate to Insurant Data page for {string} insurance")

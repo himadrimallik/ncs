@@ -15,18 +15,12 @@ public class CommonStepDefs extends BaseTest {
     CommonPage commonPage;
 
     public CommonStepDefs() throws IOException {
-//        setUpEnvironment("Chrome");
         commonPage = new CommonPage(driver);
     }
 
-    @Given("I launch {string} application")
-    public void i_launch_application_in_browser(String applicationName) throws IOException {
-        if(applicationName.equalsIgnoreCase("Tricentis Vehicle Insurance")){
-            driver.get(Hooks.prop.getProperty("tricentisVehicleInsuranceApplication"));
-        }else if(applicationName.equalsIgnoreCase("SP Group")){
-            driver.get(Hooks.prop.getProperty("spGroupApplication"));
-        }
-
+    @Given("I launch Oppenheimer application")
+    public void i_launch_application_in_browser() throws IOException {
+        driver.get(Hooks.prop.getProperty("oppenheimerUIApplication"));
     }
 
     @Then("I should navigate to Landing page")
@@ -36,8 +30,7 @@ public class CommonStepDefs extends BaseTest {
 
     @Then("I close Application")
     public void i_close_application() {
-//        driver.close();
-//        cleanUpEnvironment();
+
     }
 
     @When("I click on {string} from Landing Page")

@@ -1,9 +1,9 @@
-@AutomobileInsurance
-Feature: Verify Automobile Insurance in Tricentis Demo App
+@Oppenheimer_UI
+Feature: As the Clerk, I should be able to insert a single record of working class hero into database via an API
 
-  @AutomobileInsurance_Valid
-  Scenario: Verify Valid Automobile Insurance
-    Given I launch "Tricentis Vehicle Insurance" application
+  @Oppenheimer_US2 @Oppenheimer_US2_AC1
+  Scenario: Verify As the Clerk, I should be able to insert more than one working class hero into database via an API
+    Given I launch Oppenheimer application
     Then I should navigate to Landing page
     When I click on "Automobile" from Landing Page
     Then I should navigate to "Automobile" page
@@ -16,3 +16,4 @@ Feature: Verify Automobile Insurance in Tricentis Demo App
     When I submit Price Option with "valid" details for "Automobile" insurance
     Then I should navigate to Send Quote page for "Automobile" insurance
     Then I close Application
+

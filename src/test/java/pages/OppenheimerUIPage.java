@@ -6,20 +6,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import pageObjects.InsurantDataPageObjects;
+import pageObjects.OppenheimerUIPageObjects;
 
 import java.util.List;
 
 import static libraries.ElementWrappers.*;
 
-public class InsurantDataPage {
+public class OppenheimerUIPage {
 
-    InsurantDataPageObjects insurantDataPageObjects;
+    OppenheimerUIPageObjects insurantDataPageObjects;
     WebDriver driver;
 
-    public InsurantDataPage(WebDriver driver) {
+    public OppenheimerUIPage(WebDriver driver) {
         this.driver = driver;
-        insurantDataPageObjects = new InsurantDataPageObjects();
+        insurantDataPageObjects = new OppenheimerUIPageObjects();
         PageFactory.initElements(driver, insurantDataPageObjects);
     }
 
