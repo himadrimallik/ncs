@@ -23,8 +23,16 @@ public class OppenheimerUIPage {
         PageFactory.initElements(driver, oppenheimerUIPageObjects);
     }
 
-    public void verifyAutomobileInsurantPage(){
-        Assert.assertTrue(isDisplayed(driver, oppenheimerUIPageObjects.firstNameTextbox));
+    public void uploadCSVFile(){
+        Assert.assertTrue(isDisplayed(driver, oppenheimerUIPageObjects.browseBtn));
+
+        WebElement browse = driver.findElement(By.xpath("//input[@class='custom-file-input']"));
+        //click on ‘Choose file’ to upload the desired file
+
+        String projectBasePath = libraries.Hooks.prop.getProperty("projectBasePath");
+        String filePath = projectBasePath + "/src/test/resources/csv/oppenheimerCSV_SingleRecord.csv";
+
+        browse.sendKeys(filePath);
 
     }
 

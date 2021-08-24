@@ -1,4 +1,4 @@
-package test.java.libraries;
+package libraries;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

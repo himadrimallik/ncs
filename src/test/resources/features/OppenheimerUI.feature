@@ -4,14 +4,14 @@ Feature: Verify Oppenheimer project via UI
   @Oppenheimer_US3 @Oppenheimer_US3_AC1
   Scenario: Verify header row of csv file
     Given I have CSV file
-    When I open CSV file
+    When I open "single record" CSV file
     Then I should see header in first row
 
   @Oppenheimer_US3 @Oppenheimer_US3_AC2
-  Scenario: Verify subsequent rows of csv file
+  Scenario: Verify subsequent row of csv file
     Given I have CSV file
-    When I open CSV file
-    Then I should see data in subsequent rows
+    When I open "single record" CSV file
+    Then I should see data in subsequent row
 
   @Oppenheimer_US3 @Oppenheimer_US3_AC3
   Scenario: Verify As the Clerk, I should be able to upload a csv file to a portal so that I can populate the database from a UI

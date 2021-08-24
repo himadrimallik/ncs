@@ -1,0 +1,20 @@
+---
+taxDetails:
+    -   birthday: 12121988
+        gender: m
+        name: Test User
+        natid: 123456
+        salary: 10000
+        tax: 9500
+    -   birthday: 12122001
+        gender: f
+        name: First User
+        natid: 123457
+        salary: 8000
+        tax: 5000
+    -   birthday: 11112000
+        gender: m
+        name: LowTax User
+        natid: 123458
+        salary: 9000
+        tax: 8999

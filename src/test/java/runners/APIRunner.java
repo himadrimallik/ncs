@@ -45,7 +45,9 @@ public class APIRunner extends BaseTest {
                 driver = new FirefoxDriver();
             }
 
-            driver.manage().window().maximize();
+            if(!browserName.equalsIgnoreCase("NA")) {
+                driver.manage().window().maximize();
+            }
 
             Class<?> testClass = this.getClass();
             changeCucumberAnnotation(testClass, "features", new String[]{features});

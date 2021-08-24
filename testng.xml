@@ -1,36 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Selenium Cucumber TestNG Suite">
+<suite name="Selenium Cucumber TestNG Suite" parallel="tests" thread-count="2">
 
-    <test name="Chrome Test" enabled="true">
+    <test name="UI Test" enabled="false">
         <parameter name ="browser" value="Chrome" />
+<!--        <parameter name ="browser" value="Firefox" />-->
+<!--        <parameter name ="browser" value="IE" />-->
         <parameter name ="features" value="src/test/resources/features" />
-        <parameter name ="tags" value="@Oppenheimer_UI" />
+        <parameter name ="tags" value="@Oppenheimer_US3_AC3" />
         <classes>
             <class name="runners.UIRunner" />
         </classes>
     </test>
 
-    <test name="Firefox Test" enabled="false">
-        <parameter name ="browser" value="Firefox" />
-        <parameter name ="features" value="src/test/resources/features" />
-        <parameter name ="tags" value="@Oppenheimer_UI" />
-        <classes>
-            <class name="runners.UIRunner" />
-        </classes>
-    </test>
-
-    <test name="IE Test" enabled="false">
-        <parameter name ="browser" value="IE" />
-        <parameter name ="features" value="src/test/resources/features" />
-        <parameter name ="tags" value="@Oppenheimer_UI" />
-        <classes>
-            <class name="runners.UIRunner" />
-        </classes>
-    </test>
-
-    <test name="API Test" enabled="false">
+    <test name="API Test" enabled="true">
+        <parameter name ="browser" value="NA" />
         <parameter name ="features" value="src/test/resources/features" />
         <parameter name ="tags" value="@Oppenheimer_API" />
         <classes>

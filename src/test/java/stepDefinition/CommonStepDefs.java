@@ -3,10 +3,9 @@ package stepDefinition;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import libraries.BaseTest;
+import libraries.Hooks;
 import pages.CommonPage;
-import test.java.libraries.Hooks;
 
 import java.io.IOException;
 
@@ -30,9 +29,12 @@ public class CommonStepDefs extends BaseTest {
 
     @Given("I have CSV file")
     public void iHaveCSVFile() {
+        commonPage.verifyCSVFileExistence();
     }
 
     @Given("I launch application via API")
     public void iLaunchApplicationViaAPI() {
+        commonPage.verifyBaseAPIExistence();
     }
+
 }

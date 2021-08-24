@@ -10,9 +10,4 @@ public class CommonPageObjects {
     @FindAll({@FindBy(xpath = "//*[text() = 'The Oppenheimer Project']")})
     public WebElement landingPageHeader;
 
-    @FindAll({@FindBy(className = "custom-file-input")})
-    public WebElement browseCSV;
-
-
-
 }

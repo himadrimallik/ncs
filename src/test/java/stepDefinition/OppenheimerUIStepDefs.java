@@ -17,6 +17,7 @@ public class OppenheimerUIStepDefs extends BaseTest {
 
     @When("I upload csv file")
     public void iUploadCsvFile() {
+        oppenheimerUIPage.uploadCSVFile();
     }
 
     @When("I should navigate to Dispense Tax Relief page")

@@ -6,8 +6,8 @@ import org.testng.annotations.BeforeSuite;
 
 import java.io.IOException;
 
-import static test.java.libraries.Hooks.loadConfigFiles;
-import static test.java.libraries.Hooks.prop;
+import static libraries.Hooks.loadConfigFiles;
+import static libraries.Hooks.prop;
 
 
 public class BaseTest {
@@ -27,8 +27,10 @@ public class BaseTest {
 
     @AfterSuite
     public void cleanUpEnvironment(){
-        driver.close();
-        driver.quit();
+        if(driver != null){
+            driver.close();
+            driver.quit();
+        }
     }
 
 }
