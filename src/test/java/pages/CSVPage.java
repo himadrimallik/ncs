@@ -30,7 +30,7 @@ public class CSVPage {
             CSVReader csvReader = new CSVReader(filereader);
             List<String[]> allData = csvReader.readAll();
             String[] headerLine = allData.get(0);
-            String[] headerData = headerLine[0].split("\t");
+            String[] headerData = headerLine[0].split(",");
 
             // Verify Header
             for (int i=0; i < headerData.length; i++) {
@@ -38,22 +38,22 @@ public class CSVPage {
 
                 switch (i){
                     case 0:
-                        Assert.assertEquals(data, "Natural Id (natid)");
+                        Assert.assertEquals(data, "natid");
                         break;
                     case 1:
-                        Assert.assertEquals(data, "Name");
+                        Assert.assertEquals(data, "name");
                         break;
                     case 2:
-                        Assert.assertEquals(data, "Gender");
+                        Assert.assertEquals(data, "gender");
                         break;
                     case 3:
-                        Assert.assertEquals(data, "Birthday");
+                        Assert.assertEquals(data, "salary");
                         break;
                     case 4:
-                        Assert.assertEquals(data, "Salary");
+                        Assert.assertEquals(data, "birthday");
                         break;
                     case 5:
-                        Assert.assertEquals(data, "Tax paid");
+                        Assert.assertEquals(data, "tax");
                         break;
                 }
             }

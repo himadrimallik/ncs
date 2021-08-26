@@ -1,13 +1,11 @@
 package libraries;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
 import java.util.function.Function;
 
 public class ElementWrappers {
@@ -16,26 +14,6 @@ public class ElementWrappers {
         try {
             waitForElement(driver, element);
             element.click();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    public static String readText(WebDriver driver, WebElement element){
-        String text = "";
-        try {
-            waitForElement(driver, element);
-            text = element.getAttribute("text");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        return text;
-    }
-
-    public static void enterText(WebDriver driver, WebElement element, String text){
-        try {
-            waitForElement(driver, element);
-            element.sendKeys(text);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -62,34 +40,14 @@ public class ElementWrappers {
         }
     }
 
-    public static void selectValue(WebDriver driver, WebElement element, String text){
+    public static void moveToElement(WebDriver driver, WebElement element){
         try {
-            waitForElement(driver, element);
-            element.sendKeys(text);
+            Actions actions = new Actions(driver);
+            actions.moveToElement(element);
+            Thread.sleep(2000);
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-    public static void selectRadio(WebDriver driver, By by, String id){
-        try {
-            List<WebElement> childElements = driver.findElements(by);
-
-            for (WebElement element: childElements) {
-                if(element.getAttribute("id").equalsIgnoreCase(id)){
-                    try {
-                        element.click();
-                    }catch (Exception e){
-                        element.sendKeys(Keys.ENTER);
-                        element.sendKeys(Keys.SPACE);
-                    }
-                    break;
-                }
-            }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
 
 }

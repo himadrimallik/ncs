@@ -20,28 +20,29 @@ public class OppenheimerUIStepDefs extends BaseTest {
         oppenheimerUIPage.uploadCSVFile();
     }
 
-    @When("I should navigate to Dispense Tax Relief page")
-    public void iShouldNavigateToDispenseTaxReliefPage() {
-    }
-
     @Then("I should see red colored button")
     public void iShouldSeeRedColoredButton() {
+        oppenheimerUIPage.validateButtonColor();
     }
 
     @Then("I should see {string} button")
-    public void iShouldSeeButton(String arg0) {
+    public void iShouldSeeButton(String buttonName) {
+        oppenheimerUIPage.validateButtonName(buttonName);
     }
 
     @When("I click on {string} button")
-    public void iClickOnButton(String arg0) {
-    }
-
-    @Then("I should navigate to Cash Dispensed page")
-    public void iShouldNavigateToCashDispensedPage() {
-
+    public void iClickOnButton(String buttonName) {
+        oppenheimerUIPage.clickButton(buttonName);
     }
 
     @Then("I should see records")
     public void iShouldSeeRecords() {
+        oppenheimerUIPage.validateTaxReliefTable();
     }
+
+    @Then("I should navigate to Cash Dispensed page")
+    public void iShouldNavigateToCashDispensedPage() {
+        oppenheimerUIPage.validateCashDispensedPage();
+    }
+
 }

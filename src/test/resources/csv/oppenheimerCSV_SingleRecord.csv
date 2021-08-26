@@ -1,2 +1,2 @@
-Natural Id (natid)	Name	Gender	Birthday	Salary	Tax paid
-1234	First User	m	12121980	10000	9500
+natid,name,gender,salary,birthday,tax
+123488,UI First User,m,10000,12121980,9500

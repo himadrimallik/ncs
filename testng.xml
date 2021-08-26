@@ -3,12 +3,12 @@
 
 <suite name="Selenium Cucumber TestNG Suite" parallel="tests" thread-count="2">
 
-    <test name="UI Test" enabled="false">
+    <test name="UI Test" enabled="true">
         <parameter name ="browser" value="Chrome" />
 <!--        <parameter name ="browser" value="Firefox" />-->
 <!--        <parameter name ="browser" value="IE" />-->
         <parameter name ="features" value="src/test/resources/features" />
-        <parameter name ="tags" value="@Oppenheimer_US3_AC3" />
+        <parameter name ="tags" value="@Oppenheimer_UI" />
         <classes>
             <class name="runners.UIRunner" />
         </classes>

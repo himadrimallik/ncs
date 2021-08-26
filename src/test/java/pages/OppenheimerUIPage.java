@@ -1,14 +1,10 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pageObjects.OppenheimerUIPageObjects;
-
-import java.util.List;
 
 import static libraries.ElementWrappers.*;
 
@@ -24,32 +20,44 @@ public class OppenheimerUIPage {
     }
 
     public void uploadCSVFile(){
-        Assert.assertTrue(isDisplayed(driver, oppenheimerUIPageObjects.browseBtn));
-
-        WebElement browse = driver.findElement(By.xpath("//input[@class='custom-file-input']"));
-        //click on ‘Choose file’ to upload the desired file
-
         String projectBasePath = libraries.Hooks.prop.getProperty("projectBasePath");
         String filePath = projectBasePath + "/src/test/resources/csv/oppenheimerCSV_SingleRecord.csv";
 
-        browse.sendKeys(filePath);
-
+        oppenheimerUIPageObjects.browseBtn.sendKeys(filePath);
     }
 
-    public void selectHobbies(String hobbies){
-        List<WebElement> childElements = driver.findElements(By.name("Hobbies"));
+    public void validateButtonColor(){
+        waitForElement(driver, oppenheimerUIPageObjects.dispenseNowBtn);
 
-        for (WebElement element: childElements) {
-            if(element.getAttribute("value").equalsIgnoreCase(hobbies)){
-                try {
-                    element.click();
-                }catch (Exception e){
-                    element.sendKeys(Keys.ENTER);
-                    element.sendKeys(Keys.SPACE);
-                }
-                break;
-            }
+        String colorCode = Color.fromString(oppenheimerUIPageObjects.dispenseNowBtn.getCssValue("background-color")).asHex();
+        Assert.assertEquals(colorCode, "#dc3545");
+    }
+
+    public void validateButtonName(String buttonName){
+        waitForElement(driver, oppenheimerUIPageObjects.dispenseNowBtn);
+
+        Assert.assertEquals(oppenheimerUIPageObjects.dispenseNowBtn.getText(), buttonName);
+    }
+
+    public void clickButton(String buttonName){
+        if(buttonName.equalsIgnoreCase("Dispense Now")){
+            moveToElement(driver, oppenheimerUIPageObjects.dispenseNowBtn);
+            clickObject(driver, oppenheimerUIPageObjects.dispenseNowBtn);
+        }else if(buttonName.equalsIgnoreCase("Refresh Tax Relief Table")){
+            moveToElement(driver, oppenheimerUIPageObjects.refreshButton);
+            clickObject(driver, oppenheimerUIPageObjects.refreshButton);
         }
+    }
+
+    public void validateTaxReliefTable(){
+        isDisplayed(driver, oppenheimerUIPageObjects.taxReleifTable);
+        isDisplayed(driver, oppenheimerUIPageObjects.taxReleifTableCaption);
+        isDisplayed(driver, oppenheimerUIPageObjects.taxReleifTableNatidHeader);
+        isDisplayed(driver, oppenheimerUIPageObjects.taxReleifTableCaption);
+    }
+
+    public void validateCashDispensedPage(){
+        isDisplayed(driver, oppenheimerUIPageObjects.cashDispensedText);
     }
 
 }
